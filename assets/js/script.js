@@ -22,7 +22,6 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 
-
 // Setting the current time in the header
 function currentTime() {
   var currentTime = dayjs();
@@ -31,3 +30,49 @@ function currentTime() {
 
 setInterval(currentTime, 1000);
 currentTime();
+
+// jQuery
+// function updateSlotColors() {
+//   var currentHour = dayjs().hour();
+
+//   $(".time-block").each(function () {
+//     var timeBlock = $(this);
+//     var timeBlockHour = parseInt(timeBlock.attr("id").split("-")[1]);
+
+//     if (currentHour > timeBlockHour) {
+//       // Past hour
+//       timeBlock.removeClass("past").addClass("past");
+//     } else if (currentHour === timeBlockHour) {
+//       // Present hour
+//       timeBlock.removeClass("past").addClass("present");
+//     } else {
+//       // Future hour
+//       timeBlock.removeClass("past").addClass("future");
+//     }
+//   });
+// };
+
+// Vanilla JS
+function updateSlotColors() {
+  var currentHour = dayjs().hour();
+  var timeblocks = document.querySelectorAll(".time-block");
+
+  timeblocks.forEach(function (timeBlock) {
+    var timeBlockHour = parseInt(timeBlock.id.split("-")[1]);
+
+    if (currentHour > timeBlockHour) {
+      // Past hour
+      timeBlock.classList.remove("past");
+      timeBlock.classList.add("past");
+    } else if (currentHour === timeBlockHour) {
+      // Present hour
+      timeBlock.classList.remove("past");
+      timeBlock.classList.add("present");
+    } else {
+      // Future hour
+      timeBlock.classList.remove("past");
+      timeBlock.classList.add("future");
+    }
+  });
+};
+updateSlotColors();
