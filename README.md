@@ -11,7 +11,7 @@ To use this application, please visit the link below:
 https://mattkellyirl.github.io/work-day-scheduler/
 
 ## Screenshot
-<img src="/assets/images/screenshot.png">
+<img src="assets/images/screenshot.png">
 
 ## Credits
 Written by Matt Kelly / Submitted 22/01/2024
